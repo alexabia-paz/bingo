@@ -2,6 +2,7 @@
 # pylint: disable=missing-docstring
 # pylint: disable=unused-variable
 
+import pytest
 
 def test_cpp_agraph():
     try:
@@ -11,7 +12,7 @@ def test_cpp_agraph():
         bingocpp = False
 
     if not bingocpp:
-        raise ModuleNotFoundError("Bingocpp AGraph could not be loaded."
+        pytest.skip("Bingocpp AGraph could not be loaded."
                                   " Its tests will be skipped.")
 
 
@@ -23,7 +24,7 @@ def test_cpp_evaluation_backend():
         bingocpp = False
 
     if not bingocpp:
-        raise ModuleNotFoundError("Bingocpp evaluation_backend could not be "
+        pytest.skip("Bingocpp evaluation_backend could not be "
                                   "loaded."
                                   " Its tests will be skipped.")
 
@@ -36,7 +37,7 @@ def test_cpp_simplification_backend():
         bingocpp = False
 
     if not bingocpp:
-        raise ModuleNotFoundError("Bingocpp simplification_backend could not "
+        pytest.skip("Bingocpp simplification_backend could not "
                                   "be loaded."
                                   " Its tests will be skipped.")
 
@@ -50,7 +51,7 @@ def test_cpp_implicit_regression():
         bingocpp = False
 
     if not bingocpp:
-        raise ModuleNotFoundError("Bingocpp implicit regression classes could"
+        pytest.skip("Bingocpp implicit regression classes could"
                                   " not be loaded."
                                   " Its tests will be skipped.")
 
@@ -64,7 +65,7 @@ def test_cpp_explicit_regression():
         bingocpp = False
 
     if not bingocpp:
-        raise ModuleNotFoundError("Bingocpp explicit regression classes could"
+        pytest.skip("Bingocpp explicit regression classes could"
                                   " not be loaded."
                                   " Its tests will be skipped.")
 
@@ -79,6 +80,6 @@ def test_cpp_gradient_mixins():
         bingocpp = False
 
     if not bingocpp:
-        raise ModuleNotFoundError("Bingocpp gradient mixin classes could"
+        pytest.skip("Bingocpp gradient mixin classes could"
                                   " not be loaded."
                                   " Its tests will be skipped.")

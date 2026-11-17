@@ -12,6 +12,9 @@ try:
 except ImportError:
     PAR_ARCH_LOADED = False
 
+pytestmark = pytest.mark.skipif(not PAR_ARCH_LOADED,
+                                reason="mpi4py/MPI not available")
+
 
 DummyChromosome = namedtuple("DummyChromosome", ["fitness"])
 
